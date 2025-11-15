@@ -13,26 +13,36 @@ A complete full-stack web application for managing events, supplies, and service
 ## Project Structure
 
 \`\`\`
-trixtech/
-├── app/
-│   ├── auth/
-│   │   ├── login/
-│   │   └── register/
-│   ├── customer/
-│   │   ├── home/
-│   │   ├── booking/
-│   │   ├── bookings/
-│   │   └── payment/
-│   ├── admin/
-│   │   ├── dashboard/
-│   │   ├── services/
-│   │   ├── bookings/
-│   │   └── customers/
-│   └── layout.tsx
-├── lib/
-│   ├── auth-context.tsx
-│   └── protected-route.tsx
-└── server.js
+trixtech-booking-system/
+├── frontend/                 # Next.js application
+│   ├── app/
+│   │   ├── auth/
+│   │   │   ├── login/
+│   │   │   └── register/
+│   │   ├── customer/
+│   │   │   ├── home/
+│   │   │   ├── booking/
+│   │   │   ├── bookings/
+│   │   │   └── payment/
+│   │   ├── admin/
+│   │   │   ├── dashboard/
+│   │   │   ├── services/
+│   │   │   ├── bookings/
+│   │   │   └── customers/
+│   │   └── layout.tsx
+│   ├── components/
+│   ├── lib/
+│   │   ├── auth-context.tsx
+│   │   └── protected-route.tsx
+│   ├── package.json
+│   └── README.md
+└── backend/                  # Express.js API server
+    ├── server.js
+    ├── models/              # MongoDB schemas
+    ├── routes/              # API routes
+    ├── middleware/          # Authentication & RBAC middleware
+    ├── package.json
+    └── README.md
 \`\`\`
 
 ## Features
@@ -71,6 +81,7 @@ npm run dev
 
 ### Frontend Setup
 \`\`\`bash
+cd frontend
 npm install
 npm run dev
 \`\`\`
@@ -127,10 +138,12 @@ Admin:
 
 ## Getting Started
 
-1. Install dependencies for both frontend and backend
+1. Install dependencies for both frontend and backend:
+   - `cd frontend && npm install`
+   - `cd backend && npm install`
 2. Start MongoDB service
-3. Run backend: `npm run dev` (from backend folder)
-4. Run frontend: `npm run dev`
+3. Run backend: `npm run dev` (from backend folder on port 5000)
+4. Run frontend: `npm run dev` (from frontend folder on port 3000)
 5. Access the app at http://localhost:3000
 
 ## Features by User Role
